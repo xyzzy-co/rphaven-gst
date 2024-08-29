@@ -1,11 +1,9 @@
 ![](https://img.shields.io/badge/Foundry-v10-informational)
 <!--- Downloads @ Latest Badge -->
-<!--- replace <user>/<repo> with your username/repository -->
-<!--- ![Latest Release Download Count](https://img.shields.io/github/downloads/<user>/<repo>/latest/module.zip) -->
+![Latest Release Download Count](https://img.shields.io/github/downloads/xyzzy-co/rphaven-gst/latest/module.zip)
 
 <!--- Forge Bazaar Install % Badge -->
-<!--- replace <your-module-name> with the `name` in your manifest -->
-<!--- ![Forge Installs](https://img.shields.io/badge/dynamic/json?label=Forge%20Installs&query=package.installs&suffix=%25&url=https%3A%2F%2Fforge-vtt.com%2Fapi%2Fbazaar%2Fpackage%2F<your-module-name>&colorB=4aa94a) -->
+![Forge Installs](https://img.shields.io/badge/dynamic/json?label=Forge%20Installs&query=package.installs&suffix=%25&url=https%3A%2F%2Fforge-vtt.com%2Fapi%2Fbazaar%2Fpackage%2Frphaven-gst&colorB=4aa94a)
 
 
 # How to use this Template to create a versioned Release
@@ -66,6 +64,10 @@ Clicking "Save" in the bottom right will save the new version, which means that 
 
 # FoundryVTT Module
 
-Does something, probably
+Allows GMs to take payment for sessions using RPHaven Game Session Tokens.  This is only useful for RPHaven games.
+
+TODO: figure out how to do this so that the GM can take it iff the player 
+allows it _or_ the player is in control of spending it.  The former would hook 
+into the player list.  Unclear where the latter would hook into.
 
 ## Changelog
