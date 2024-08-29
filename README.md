@@ -61,6 +61,14 @@ When listing a new version, Version should be the version number you set above, 
 
 Clicking "Save" in the bottom right will save the new version, which means that anyone installing your module from within Foundry will get that version, and a post will be generated in the #release-announcements channel on the official Foundry VTT Discord.
 
+## Manifest details
+In case the auto action thing doesn't work, this is what the manifest should have in it.
+
+```
+  "url": "https://github.com/xyzzy-co/rphaven-gst/",
+  "manifest": "https://github.com/xyzzy-co/rphaven-gst/releases/latest/download/module.json",
+  "download": "https://github.com/xyzzy-co/rphaven-gst/releases/download/0.0.1/module.zip",
+```
 
 # FoundryVTT Module
 
