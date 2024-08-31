@@ -1,3 +1,6 @@
 {
-    "MODULE.hello": "hello"
+  "MODULE": {
+    "not-spent-title": "Spend a Game Session token",
+    "spent-title": "Game Session token applied"
+  }
 }

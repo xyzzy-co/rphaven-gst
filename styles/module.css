@@ -1,0 +1,17 @@
+.rphaven-gst-token-icon {
+  background: transparent;
+  padding: 0;
+  color: white;
+  line-height: normal;
+  border: 0;
+  align-self: center;
+}
+
+.rphaven-gst-token-icon > i {
+  margin-right: 0;
+}
+
+.rphaven-gst-token-icon:hover, .rphaven-gst-token-icon:focus {
+  box-shadow: none;
+  text-shadow: 0 0 5px red;
+}

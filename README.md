@@ -74,8 +74,13 @@ In case the auto action thing doesn't work, this is what the manifest should hav
 
 Allows GMs to take payment for sessions using RPHaven Game Session Tokens.  This is only useful for RPHaven games.
 
-TODO: figure out how to do this so that the GM can take it iff the player 
-allows it _or_ the player is in control of spending it.  The former would hook 
-into the player list.  Unclear where the latter would hook into.
+TODO: figure out how to do this so that the GM can request the spending of a 
+token, but the player has to confirm it.  also that the player cannot join the
+game unless the GM approves it (presumably after seeing the token has been 
+spent).
+
+TODO: create the UI for users to set their RPHaven user id (and authenticate).
+TODO: create the UI to show tokens
+TODO: create the UI to allow GMs to try to spend token and users to confirm.
 
 ## Changelog

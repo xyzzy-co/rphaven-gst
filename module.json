@@ -20,8 +20,13 @@
     "systems": [],
     "requires": []
   },
-  "esmodules": ["scripts/module.js"],
-  "scripts": ["scripts/lib/lib.js"],
+  "esmodules": [
+    "scripts/constants.js",
+    "scripts/log.js",
+    "scripts/module.js",
+    "scripts/token_list.js"
+  ],
+  "scripts": [],
   "styles": ["styles/module.css"],
   "languages": [
     {
@@ -38,6 +43,10 @@
   "media": [
     {
       "type": "icon",
+      "url": "https://rphaven.co.uk/wp-content/uploads/2021/05/token_1.png"
+    },
+    {
+      "type": "setup",
       "url": "https://rphaven.co.uk/wp-content/uploads/2021/05/token_1.png"
     }
   ]
