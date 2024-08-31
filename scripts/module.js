@@ -7,11 +7,24 @@ export const TEMPLATES = {
   SPEND_TOKEN_FORM: `modules/${ID}/templates/spend_token_form.hbs`,
 };
 
+export const SETTINGS = {
+  RPHAVEN_USERNAME: "rphaven-username",
+};
+
 log("in module.js");
 
 class Module {
   static initialize() {
     this.spendTokenForm = new SpendTokenForm();
+
+    game.settings.register(ID, SETTINGS.RPHAVEN_USERNAME, {
+      name: `MODULE.settings.${SETTINGS.RPHAVEN_USERNAME}.name`,
+      default: "",
+      type: String,
+      scope: "client",
+      config: true,
+      hint: `MODULE.settings.${SETTINGS.RPHAVEN_USERNAME}.hint`,
+    });
   }
 }
 
@@ -31,6 +44,7 @@ Hooks.once("devModeReady", ({ registerPackageDebugFlag }) => {
 
 Hooks.on("renderPlayerList", (_playerList, html) => {
   // TODO: show this for the GM for all users?
+  // TODO: show a different icon if the username hasn't been set?
 
   // find the element which has our logged in user's id
   const loggedInUserListItem = html.find(`[data-user-id="${game.userId}"]`);

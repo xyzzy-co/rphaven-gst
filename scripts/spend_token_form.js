@@ -20,9 +20,9 @@ export class SpendTokenForm extends FormApplication {
     return mergedOptions;
   }
 
-  getData(options) {
+  async getData(options) {
     return {
-      tokens: TokenList.getTokensForUser(options.userId),
+      tokens: await TokenList.getTokensForUser(options.userId),
     };
   }
 

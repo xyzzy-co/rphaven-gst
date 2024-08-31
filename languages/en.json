@@ -1,6 +1,12 @@
 {
   "MODULE": {
     "not-spent-title": "Spend a Game Session token",
-    "spent-title": "Game Session token has been spent"
+    "spent-title": "Game Session token has been spent",
+    "settings": {
+      "rphaven-username": {
+        "name": "Your RPHaven username",
+        "hint": "Used to access your Game Session tokens"
+      }
+    }
   }
 }
