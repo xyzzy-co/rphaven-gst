@@ -1,15 +1,23 @@
 import { ID } from "./constants.js";
 import { log } from "./log.js";
+import { SpendTokenForm } from "./spend_token_form.js";
 import { TokenList } from "./token_list.js";
 
-const TEMPLATES = {
-  TOKEN_LIST: `modules/${ID}/templates/token_list.hbs`,
+export const TEMPLATES = {
+  SPEND_TOKEN_FORM: `modules/${ID}/templates/spend_token_form.hbs`,
 };
 
 log("in module.js");
 
+class Module {
+  static initialize() {
+    this.spendTokenForm = new SpendTokenForm();
+  }
+}
+
 Hooks.once("init", async function () {
   log("module.js ::init");
+  Module.initialize();
 });
 
 Hooks.once("ready", async function () {
@@ -21,7 +29,7 @@ Hooks.once("devModeReady", ({ registerPackageDebugFlag }) => {
   registerPackageDebugFlag(ID);
 });
 
-Hooks.on("renderPlayerList", (playerList, html) => {
+Hooks.on("renderPlayerList", (_playerList, html) => {
   // TODO: show this for the GM for all users?
 
   // find the element which has our logged in user's id
@@ -44,8 +52,15 @@ Hooks.on("renderPlayerList", (playerList, html) => {
         `<i class='far fa-money-bill-alt'></i>` +
         `</button>`
     );
+
     html.on("click", ".rphaven-gst-token-icon", (event) => {
       log("attempt to spend a token");
+
+      const userId = $(event.currentTarget)
+        .parents("[data-user-id]")
+        ?.data()?.userId;
+
+      Module.spendTokenForm.render(true, { userId });
     });
   }
 });

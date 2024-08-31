@@ -1,4 +1,4 @@
-import { FLAGS } from "./constants.js";
+import { FLAGS, ID } from "./constants.js";
 
 // Manage the mapping between an RP Haven user ID and a Foundry user ID.
 export class User {

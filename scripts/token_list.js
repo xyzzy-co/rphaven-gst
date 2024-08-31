@@ -10,7 +10,8 @@ export class TokenList {
   }
 
   // spend a token for the given user.
-  static spendTokenForUser(userId) {
+  static spendTokenForUser(userId, tokenId) {
+    log(false, "Spending token: ", { userId, tokenId });
     // TODO: server call and then...
     game.users.get(userId)?.setFlag(ID, FLAGS.SPENT_TOKEN, true);
   }

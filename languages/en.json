@@ -1,6 +1,6 @@
 {
   "MODULE": {
     "not-spent-title": "Spend a Game Session token",
-    "spent-title": "Game Session token applied"
+    "spent-title": "Game Session token has been spent"
   }
 }

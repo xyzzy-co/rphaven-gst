@@ -1,0 +1,29 @@
+{{log "spend-token-form data" this}}
+<form>
+  <ul class="token-list flexcol">
+    {{#each tokens}}
+      <li class="flexrow" data-token-id="{{id}}">
+        <span name="{{id}}.id" data-dtype="String">{{id}}</span>
+        {{#if canSpend}}
+          <button
+            type="button"
+            title="{{localize MODULE.not-spent-token}}"
+            class="flex0 rphaven-gst-token-icon"
+            data-action="spend"
+          >
+            <i class="far fa-money-bill-alt"></i>
+          </button>
+        {{else}}
+          <button
+            type="button"
+            title="{{localize MODULE.spent-token}}"
+            class="flex0 rphaven-gst-token-icon"
+            disabled
+          >
+            <i class="fas fa-money-bill-alt"></i>
+          </button>
+        {{/if}}
+      </li>
+    {{/each}}
+  </ul>
+</form>
