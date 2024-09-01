@@ -74,6 +74,6 @@ In case the auto action thing doesn't work, this is what the manifest should hav
 
 Allows GMs to take payment for sessions using RPHaven Game Session Tokens.  This is only useful for RPHaven games.
 
-TODO: create the UI for users to set their RPHaven user id (and authenticate) using Settings
+TODO: Hook up to the real API
 
 ## Changelog

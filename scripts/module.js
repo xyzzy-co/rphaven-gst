@@ -43,30 +43,19 @@ Hooks.once("devModeReady", ({ registerPackageDebugFlag }) => {
 });
 
 Hooks.on("renderPlayerList", (_playerList, html) => {
-  // TODO: show this for the GM for all users?
   // TODO: show a different icon if the username hasn't been set?
 
-  // find the element which has our logged in user's id
-  const loggedInUserListItem = html.find(`[data-user-id="${game.userId}"]`);
-
-  if (TokenList.hasUserSpentToken(game.userId)) {
-    const tooltip = game.i18n.localize("MODULE.spent-title");
-
-    // insert an image showing the user has spent the token
-    loggedInUserListItem.append(
-      `<span class='rphaven-gst-token-icon' title='${tooltip}'>` +
-        `<i class='fas fa-money-bill-alt'></i>` +
-        `</span>`
-    );
+  if (game.user.isGM) {
+    game.users.players.forEach((player) => {
+      const loggedInUserListItem = html.find(`[data-user-id="${player.id}"]`);
+      _appendTokenToUserListItem(loggedInUserListItem, player.id);
+    });
   } else {
-    const tooltip = game.i18n.localize("MODULE.not-spent-title");
-    // insert a button at the end of this element which will allow the player to spend the token
-    loggedInUserListItem.append(
-      `<button type='button' class='rphaven-gst-token-icon' title='${tooltip}'>` +
-        `<i class='far fa-money-bill-alt'></i>` +
-        `</button>`
-    );
+    // find the element which has our logged in user's id
+    const loggedInUserListItem = html.find(`[data-user-id="${game.userId}"]`);
+    _appendTokenToUserListItem(loggedInUserListItem, game.userId);
 
+    // players can click on their own icon to spend the token.
     html.on("click", ".rphaven-gst-token-icon", (event) => {
       log("attempt to spend a token");
 
@@ -78,3 +67,25 @@ Hooks.on("renderPlayerList", (_playerList, html) => {
     });
   }
 });
+
+function _appendTokenToUserListItem(userListItem, userId) {
+  if (TokenList.hasUserSpentToken(userId)) {
+    const tooltip = game.i18n.localize("MODULE.spent-title");
+
+    // insert an image showing the user has spent the token
+    userListItem.append(
+      `<span class='rphaven-gst-token-icon' title='${tooltip}'>` +
+        `<i class='fas fa-money-bill-alt'></i>` +
+        `</span>`
+    );
+  } else {
+    const tooltip = game.i18n.localize("MODULE.not-spent-title");
+
+    // insert a button at the end of this element which will allow the player to spend the token
+    userListItem.append(
+      `<button type='button' class='rphaven-gst-token-icon' title='${tooltip}'>` +
+        `<i class='far fa-money-bill-alt'></i>` +
+        `</button>`
+    );
+  }
+}
