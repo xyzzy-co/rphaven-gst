@@ -1,46 +1,27 @@
-![](https://img.shields.io/badge/Foundry-v10-informational)
-<!--- Downloads @ Latest Badge -->
+![](https://img.shields.io/badge/Foundry-v12-informational)
 ![Latest Release Download Count](https://img.shields.io/github/downloads/xyzzy-co/rphaven-gst/latest/module.zip)
-
-<!--- Forge Bazaar Install % Badge -->
 ![Forge Installs](https://img.shields.io/badge/dynamic/json?label=Forge%20Installs&query=package.installs&suffix=%25&url=https%3A%2F%2Fforge-vtt.com%2Fapi%2Fbazaar%2Fpackage%2Frphaven-gst&colorB=4aa94a)
 
+# FoundryVTT Module
 
-# How to use this Template to create a versioned Release
+Allows GMs to ensure players have spent RPHaven Game Session tokens before starting sessions.  This is only useful for [RPHaven](https://rphaven.co.uk) games.
 
-1. Open your repository's releases page.
+TODO: Hook up to the real API
 
-![Where to click to open repository releases.](https://user-images.githubusercontent.com/7644614/93409301-9fd25080-f864-11ea-9e0c-bdd09e4418e4.png)
 
-2. Click "Draft a new release"
+# How to install
 
-![Draft a new release button.](https://user-images.githubusercontent.com/7644614/93409364-c1333c80-f864-11ea-89f1-abfcb18a8d9f.png)
-
-3. Fill out the release version as the tag name.
-
-If you want to add details at this stage you can, or you can always come back later and edit them.
-
-![Release Creation Form](https://user-images.githubusercontent.com/7644614/93409543-225b1000-f865-11ea-9a19-f1906a724421.png)
-
-4. Hit submit.
-
-5. Wait a few minutes.
-
-A Github Action will run to populate the `module.json` and `module.zip` with the correct urls that you can then use to distribute this release. You can check on its status in the "Actions" tab.
-
-![Actions Tab](https://user-images.githubusercontent.com/7644614/93409820-c1800780-f865-11ea-8c6b-c3792e35e0c8.png)
-
-6. Grab the module.json url from the release's details page.
+1. Grab the module.json url from the release's details page.
 
 ![image](https://user-images.githubusercontent.com/7644614/93409960-10c63800-f866-11ea-83f6-270cc5d10b71.png)
 
 This `module.json` will only ever point at this release's `module.zip`, making it useful for sharing a specific version for compatibility purposes.
 
-7. You can use the url `https://github.com/<user>/<repo>/releases/latest/download/module.json` to refer to the manifest.
+2. You can use the url `https://github.com/xyzzy-co/rphaven-gst/releases/latest/download/module.json` to refer to the manifest.
 
 This is the url you want to use to install the module typically, as it will get updated automatically.
 
-# How to List Your Releases on Package Admin
+# TODO: How to List Your Releases on Package Admin
 
 To request a package listing for your first release, go to the [Package Submission Form](https://foundryvtt.com/packages/submit) (accessible via a link at the bottom of the "[Systems and Modules](https://foundryvtt.com/packages/)" page on the Foundry website).
 
@@ -62,18 +43,10 @@ When listing a new version, Version should be the version number you set above, 
 Clicking "Save" in the bottom right will save the new version, which means that anyone installing your module from within Foundry will get that version, and a post will be generated in the #release-announcements channel on the official Foundry VTT Discord.
 
 ## Manifest details
-In case the auto action thing doesn't work, this is what the manifest should have in it.
+In case the auto action thing doesn't work (it seems to), this is what the manifest should have in it.
 
 ```
   "url": "https://github.com/xyzzy-co/rphaven-gst/",
   "manifest": "https://github.com/xyzzy-co/rphaven-gst/releases/latest/download/module.json",
   "download": "https://github.com/xyzzy-co/rphaven-gst/releases/download/0.0.1/module.zip",
 ```
-
-# FoundryVTT Module
-
-Allows GMs to take payment for sessions using RPHaven Game Session Tokens.  This is only useful for RPHaven games.
-
-TODO: Hook up to the real API
-
-## Changelog
